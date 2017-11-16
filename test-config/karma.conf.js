@@ -54,8 +54,12 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-	customLaunchers: { ChromeCustom: {base: 'ChromeHeadless', flags: ['--no-sandbox']}},
-    browsers: ['ChromeCustom'],
+	customLaunchers: { 
+		ChromeCustom: {
+			base: 'ChromeHeadless', flags: ['--no-sandbox']
+		}
+	},
+    browsers: ['ChromeCustom', 'ChromeHeadless'],
     singleRun: true
   };
 
