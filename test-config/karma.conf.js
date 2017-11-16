@@ -59,7 +59,7 @@ module.exports = function(config) {
 			base: 'ChromeHeadless', flags: ['--no-sandbox']
 		}
 	},
-    browsers: ['ChromeCustom', 'ChromeHeadless'],
+    browsers: ['ChromeCustom'],
     singleRun: true
   };
 
