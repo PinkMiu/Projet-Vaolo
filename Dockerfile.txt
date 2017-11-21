@@ -1,6 +1,5 @@
-# Dockerfile for Lab5.
-# Built command: docker build -t lab5 . 
-# Run command: docker run -p 8100:8100 -it lab5
+# Built command: docker build -t testServer 
+# Run command: docker run -p 8100:8100 -it testServer
 # Application run this adress: http://138.197.157.84:8100
 
 FROM ubuntu:14.04
@@ -39,17 +38,6 @@ RUN npm -v
 # Install Ionic2
 RUN npm install -g cordova ionic
 
-#Install chrome
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-RUN sudo apt-get update 
-RUN sudo apt-get install google-chrome-stable
-
-###Install Karma
-###RUN npm install karma --save-dev
-###RUN npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev
-###./node_modules/karma/bin/karma start
-
 # Project
 RUN rm -rf Projet-Vaolo 
 RUN git clone https://github.com/RemikyaHellal/Projet-Vaolo.git
@@ -60,7 +48,6 @@ WORKDIR /Projet-Vaolo
 
 #Install Ionic Projet/Run tests
 RUN npm install
-RUN npm run test
 
 EXPOSE 8100 35729
 
